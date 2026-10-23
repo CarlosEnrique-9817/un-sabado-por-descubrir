@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f2ea">
+  <title>Un sábado por descubrir | Valeria</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <section id="welcome" class="welcome">
+    <div class="welcome-card">
+      <span class="eyebrow">24 · OCTUBRE · 2026</span>
+      <div class="ornament">✦</div>
+      <h1>Un sábado<br><em>por descubrir</em></h1>
+      <p class="dedication">Una pequeña aventura para Valeria</p>
+      <div class="thin-line"></div>
+      <p class="intro">
+        Hay días que no necesitan grandes planes
+        para convertirse en bonitos recuerdos.
+        <br><br>
+        Hoy solo necesitas traer tu sonrisa,
+        un poquito de curiosidad
+        y ganas de pasarla bien.
+        <br><br>
+        Del resto me encargo yo.
+      </p>
+      <button id="startBtn" class="primary-btn">
+        Descubrir nuestro recorrido <span>→</span>
+      </button>
+      <p class="small-note">Algunas sorpresas merecen esperar...</p>
+    </div>
+  </section>
+
+  <main id="experience" class="experience hidden">
+    <header class="page-header">
+      <span class="eyebrow">UNA PEQUEÑA AVENTURA</span>
+      <h2>El itinerario <em>secreto</em></h2>
+      <p>
+        Cinco paradas. Algunas pistas.
+        Y un día que iremos descubriendo juntos.
+      </p>
+      <div class="progress-area">
+        <div class="progress-track">
+          <div id="progressBar" class="progress-fill"></div>
+        </div>
+        <span id="progressText">0 de 5 destinos explorados</span>
+      </div>
+    </header>
+
+    <section class="map-section" aria-label="Mapa interactivo">
+      <div class="map-heading">
+        <span>✧ NUESTRO RECORRIDO ✧</span>
+        <p>Toca cada símbolo para descubrir una pista</p>
+      </div>
+
+      <div class="map-canvas">
+        <div class="map-decoration decor-one"></div>
+        <div class="map-decoration decor-two"></div>
+        <div class="map-decoration decor-three"></div>
+
+        <svg class="route-svg" viewBox="0 0 360 650"
+             preserveAspectRatio="none" aria-hidden="true">
+          <path class="route-shadow"
+            d="M75 72 C75 140 280 120 274 200
+               S70 260 84 340
+               S285 390 265 465
+               S80 535 190 590" />
+          <path id="routeLine" class="route-line"
+            d="M75 72 C75 140 280 120 274 200
+               S70 260 84 340
+               S285 390 265 465
+               S80 535 190 590" />
+        </svg>
+
+        <button class="stop stop-1" data-stop="0"
+                aria-label="Descubrir punto de partida">
+          <span class="stop-icon">⌂</span>
+          <span class="stop-label">El comienzo</span>
+        </button>
+
+        <button class="stop stop-2" data-stop="1"
+                aria-label="Descubrir almuerzo">
+          <span class="stop-icon">🍽</span>
+          <span class="stop-label">Primer destino</span>
+        </button>
+
+        <button class="stop stop-3" data-stop="2"
+                aria-label="Descubrir segunda sorpresa">
+          <span class="stop-icon">☀</span>
+          <span class="stop-label">Una pausa especial</span>
+        </button>
+
+        <button class="stop stop-4" data-stop="3"
+                aria-label="Descubrir tercera sorpresa">
+          <span class="stop-icon">✦</span>
+          <span class="stop-label">Algo inesperado</span>
+        </button>
+
+        <button class="stop stop-5" data-stop="4"
+                aria-label="Descubrir destino final">
+          <span class="stop-icon">??</span>
+          <span class="stop-label">¿Y después?</span>
+        </button>
+
+        <div class="map-footer">
+          <span>24.10.2026</span>
+          <span>El mejor plan es disfrutarlo</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <p>Hecho especialmente para ti, Vale ✦</p>
+      <button id="restartBtn" class="text-btn">
+        Volver al inicio ↺
+      </button>
+    </footer>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog"
+       aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-card">
+      <button id="closeModal" class="close-btn"
+              aria-label="Cerrar">×</button>
+      <span id="modalNumber" class="eyebrow"></span>
+      <div id="modalIcon" class="modal-icon"></div>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+      <div id="modalExtra" class="modal-extra"></div>
+      <button id="continueBtn" class="primary-btn">
+        Seguir descubriendo →
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
